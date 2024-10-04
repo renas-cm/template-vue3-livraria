@@ -12,7 +12,8 @@ const authStore = useAuthStore();
     <router-link :to="{ name: 'home' }">Home</router-link> |
     <router-link to="/categorias">Categorias</router-link> |
     <div v-if="authStore.loggedIn">
-    <router-link  to="/logout">Logout</router-link> |
+      <router-link to="/usuario">Perfil</router-link> |
+      <router-link to="/logout">Logout</router-link> |
       {{ authStore.user.email }}
     </div>
     <router-link v-else to="/login">Login</router-link>
@@ -33,7 +34,7 @@ body {
 
 header {
   background-color: #4a90e2;
-  padding: 15px;
+  padding: 5px;
   text-align: center;
   color: white;
   font-size: 1.2rem;
@@ -53,7 +54,7 @@ header a:hover {
 
 header div {
   display: inline;
-  margin-left: 10px;
+  margin-left: 0px;
 }
 
 main {

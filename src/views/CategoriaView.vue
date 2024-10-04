@@ -55,15 +55,7 @@ async function excluir(id) {
   </ul>
 </template>
 
-<style>
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f9;
-  margin: 0;
-  padding: 20px;
-  color: #333;
-}
-
+<style scoped>
 h1 {
   text-align: center;
   color: #4a90e2;
@@ -74,23 +66,23 @@ hr {
   border: none;
   height: 1px;
   background-color: #ddd;
-  margin: 20px 0;
+  margin: 15px 0;
 }
 
 .form {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 input[type="text"] {
-  padding: 10px;
+  padding: 8px;
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 300px;
+  width: 250px;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
   transition: border-color 0.3s;
 }
@@ -101,7 +93,8 @@ input[type="text"]:focus {
 }
 
 button {
-  padding: 10px 15px;
+  padding: 8px 12px;
+  font-size: 1rem;
   background-color: #4a90e2;
   color: white;
   border: none;
@@ -126,24 +119,40 @@ ul {
 
 li {
   background-color: white;
-  padding: 15px;
-  margin: 10px 0;
+  padding: 0;
+  margin: 0;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: fit-content;
 }
 
 li span {
   cursor: pointer;
+  font-size: 1rem;
+  margin: 0;
+  padding:0;
 }
 
 li span:hover {
   color: #4a90e2;
 }
 
-button:hover {
+li button {
+  padding: 5px 10px;
+  font-size: 0.8rem;
   background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 1px;
+}
+
+li button:hover {
+  background-color: #c0392b;
 }
 </style>

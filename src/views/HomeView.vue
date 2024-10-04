@@ -58,7 +58,7 @@ body {
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: #4a90e2;
   margin-bottom: 15px;
   text-align: center;
