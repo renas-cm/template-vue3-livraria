@@ -5,7 +5,7 @@ import { useAuthStore } from '@/stores/auth';
 
 const authStore = useAuthStore();
 const psg_auth_token = ref('');
-const copyMessageVisible = ref(false);  // Controle de visibilidade da mensagem
+const copyMessageVisible = ref(false);
 
 const getUserInfo = async () => {
   try {
@@ -25,11 +25,10 @@ const getUserInfo = async () => {
 
 const copyToClipboard = () => {
   navigator.clipboard.writeText(psg_auth_token.value).then(() => {
-    // Mostrar a mensagem por alguns segundos
     copyMessageVisible.value = true;
     setTimeout(() => {
       copyMessageVisible.value = false;
-    }, 2000); // Mensagem some depois de 2 segundos
+    }, 2000);
   }).catch(err => {
     console.error('Erro ao copiar o token: ', err);
   });
@@ -41,56 +40,60 @@ onMounted(() => {
 </script>
 
 <template>
-  <h2>Passage Auth Token:</h2>
-  <button @click="copyToClipboard">Copiar Token</button>
-  <!-- Mostrar a mensagem condicionalmente -->
-  <p v-if="copyMessageVisible" class="copy-message">Token copiado com sucesso!</p>
-  <p>{{ psg_auth_token }}</p>
+  <div class="container">
+    <button @click="copyToClipboard">Copiar token de autenticação</button>
+    <p v-if="copyMessageVisible" class="copy-message">Token copiado com sucesso!</p>
+    <p>{{ psg_auth_token }}</p>
+  </div>
 </template>
 
-<style>
+<style scoped>
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f4f4f9;
   margin: 0;
-  padding: 20px;
-  color: #333;
+  padding: 0;
 }
 
-h2 {
-  font-size: 1.5rem;
-  color: #4a90e2;
-  margin-bottom: 15px;
-  text-align: center;
+.container {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Alinha o conteúdo ao topo */
+  min-height: 100vh;
+  padding: 20px;
 }
 
 p {
   font-size: 1rem;
   color: #555;
   text-align: center;
-  background-color: white;
-  padding: 20px;
+  background-color: #fff;
+  padding: 15px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  margin: 20px auto;
+  max-width: 500px;
   word-break: break-all;
+  margin: 10px auto; /* Ajustado o margin para 10px */
 }
 
 button {
   display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
-  background-color: #4a90e2;
-  color: white;
+  margin: 0 auto 20px; /* Removido o espaço extra acima do botão */
+  padding: 12px 25px;
+  background-color: #343a40;
+  color: #fff;
   border: none;
   border-radius: 5px;
+  font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #357ab7;
+  background-color: #000;
+  color: #fff;
 }
 
 .copy-message {
@@ -109,6 +112,10 @@ button:hover {
 }
 
 @media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+
   p {
     padding: 15px;
     max-width: 90%;

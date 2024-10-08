@@ -3,13 +3,15 @@ import "@passageidentity/passage-elements/passage-auth";
 </script>
 
 <template>
-  <h1>Login</h1>
-  <div class="authContainer">
-    <passage-auth app-id="GKj1efF61W4xT1JFyDuKPfsK"></passage-auth>
+  <div class="container">
+    <h1>Login</h1>
+    <div class="authContainer">
+      <passage-auth app-id="GKj1efF61W4xT1JFyDuKPfsK"></passage-auth>
+    </div>
   </div>
 </template>
 
-<style>
+<style scoped>
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f4f4f9;
@@ -18,10 +20,18 @@ body {
   color: #333;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
 h1 {
-  font-size: 2rem;
-  color: #4a90e2;
-  margin-bottom: 20px;
+  font-size: 2.0rem;
+  color: #343a40;
+  margin-bottom: 30px;
   text-align: center;
 }
 
@@ -36,15 +46,6 @@ h1 {
   text-align: center;
 }
 
-passage-auth {
-  display: block;
-  margin-top: 20px;
-  --primary-color: #4a90e2;
-  --text-color: #333;
-  --button-background-color: #4a90e2;
-  --button-text-color: white;
-}
-
 @media (max-width: 600px) {
   .authContainer {
     padding: 20px;
@@ -52,5 +53,3 @@ passage-auth {
   }
 }
 </style>
-
-
