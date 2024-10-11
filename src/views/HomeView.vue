@@ -56,7 +56,6 @@ body {
 }
 
 .container {
-  background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
