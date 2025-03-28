@@ -58,7 +58,7 @@ async function excluir(id) {
       <ul class="livros-list">
         <li v-for="livro in livros" :key="livro.id">
           <div class="livro-info" @click="editar(livro)">
-            <img :src="livro.capa || 'https://via.placeholder.com/150'" alt="Capa do Livro" class="livro-capa" />
+            <img :src="livro.capa " alt="Capa do Livro" class="livro-capa" />
             <div>
               <strong>ID:</strong> {{ livro.id }} <br />
               <strong>Título:</strong> {{ livro.titulo }} <br />
